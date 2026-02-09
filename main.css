@@ -41,6 +41,10 @@ nav {
     gap: 2rem;
 }
 
+.ham{
+    display: none;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -217,4 +221,14 @@ footer {
     .nav-links {
         gap: 1rem;
     }
+}
+@media (max-width: 530px) {
+    .nav-links{
+        display: none;
+    }
+
+    .ham{
+        display: flex;
+    }
+    
 }
