@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew & Bean | Login / Signup</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6B4423, #3E2723);
+            padding: 1rem;
+        }
+
+        .auth-box {
+            background: white;
+            width: 100%;
+            max-width: 420px;
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #3E2723;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #3E2723;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #6B4423;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        .input-group {
+            margin-bottom: 1.2rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border-radius: 10px;
+            border: 2px solid #eee;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #D4A574;
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+
+        input::placeholder {
+            color: #999;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1rem;
+            background: #6B4423;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #4A3728;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 68, 35, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .toggle {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .toggle span {
+            color: #6B4423;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        .toggle span:hover {
+            color: #D4A574;
+        }
+
+        .error {
+            color: #ff4444;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .auth-box {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="auth-box">
+
+        <!-- LOGIN -->
+        <div id="loginBox">
+            <h1>Welcome Back</h1>
+            <h3>☕ Login to your Brew & Bean account</h3>
+            <div class="input-group">
+                <input type="email" id="loginEmail" placeholder="Email address">
+            </div>
+            <div class="input-group">
+                <input type="password" id="loginPassword" placeholder="Password">
+            </div>
+            <div class="error" id="loginError"></div>
+            <button onclick="login()">Login</button>
+            <div class="toggle">
+                Want to become our part? <span onclick="showSignup()">Create account</span>
+            </div>
+        </div>
+
+        <!-- SIGNUP -->
+        <div id="signupBox" style="display:none;">
+            <h2>☕ Create Account</h2>
+            <div class="input-group">
+                <input type="text" id="signupName" placeholder="Full Name">
+            </div>
+            <div class="input-group">
+                <input type="email" id="signupEmail" placeholder="Email address">
+            </div>
+            <div class="input-group">
+                <input type="password" id="signupPassword" placeholder="Create password">
+            </div>
+            <div class="error" id="signupError"></div>
+            <button onclick="signup()">Sign Up</button>
+            <div class="toggle">
+                Already our customer? <span onclick="showLogin()">Login here</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let users = [
+            {
+                name: "Yaswanth",
+                email: "mattaparthiyaswanth00@gmail.com",
+                password: "coffee"
+            }
+        ];
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        function hideError(elementId) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.style.display = 'none';
+        }
+
+        function showSignup() {
+            document.getElementById("loginBox").style.display = "none";
+            document.getElementById("signupBox").style.display = "block";
+            clearInputs();
+        }
+
+        function showLogin() {
+            document.getElementById("signupBox").style.display = "none";
+            document.getElementById("loginBox").style.display = "block";
+            clearInputs();
+        }
+
+        function clearInputs() {
+            document.getElementById("loginEmail").value = "";
+            document.getElementById("loginPassword").value = "";
+            document.getElementById("signupName").value = "";
+            document.getElementById("signupEmail").value = "";
+            document.getElementById("signupPassword").value = "";
+            hideError("loginError");
+            hideError("signupError");
+        }
+
+        function signup() {
+            let name = document.getElementById("signupName").value.trim();
+            let email = document.getElementById("signupEmail").value.trim();
+            let password = document.getElementById("signupPassword").value;
+
+            if (!name || !email || !password) {
+                showError("signupError", "All fields are required");
+                return;
+            }
+
+            if (password.length < 6) {
+                showError("signupError", "Password must be at least 6 characters");
+                return;
+            }
+
+            // Check if user already exists
+            let existingUser = users.find(function (u) {
+                return u.email === email;
+            });
+
+            if (existingUser) {
+                showError("signupError", "User already exists with this email");
+                return;
+            }
+
+            // Store user data
+            users.push({ name: name, email: email, password: password });
+
+            alert("Signup successful! Welcome to Brew & Bean, " + name + "!");
+            window.location.href = "order.html";
+        }
+
+        function login() {
+            let email = document.getElementById("loginEmail").value.trim();
+            let password = document.getElementById("loginPassword").value;
+
+            if (!email || !password) {
+                showError("loginError", "Please enter both email and password");
+                return;
+            }
+
+            // Check if user exists with matching credentials
+            let user = users.find(function (u) {
+                return u.email === email && u.password === password;
+            });
+
+            if (!user) {
+                showError("loginError", "Invalid email or password");
+                return;
+            }
+
+            alert("Login successful! Welcome back, " + user.name + "!");
+            window.location.href = "main.html";
+        }
+
+        document.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                if (document.getElementById("loginBox").style.display !== 'none') {
+                    login();
+                } else {
+                    signup();
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
