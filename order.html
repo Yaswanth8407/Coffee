@@ -7,96 +7,98 @@
     <title>Brew & Beans | Order</title>
 </head>
 <link rel="stylesheet" href="order.css.css">
+
 <body>
 
-<div class="container">
-    <h1>☕ Brew & Beans Order</h1>
+    <div class="container">
+        <h1>☕ Brew & Beans Order</h1>
 
-    <!-- MENU -->
-    <div class="menu">
-        <div class="menu-item">
-            <span class="item-name">Espresso</span>
-            <div>
-                <span class="item-price">₹350</span>
-                <button class="add-btn" onclick="addToCart('Espresso',350)">Add</button>
+        <!-- MENU -->
+        <div class="menu">
+            <div class="menu-item">
+                <span class="item-name">Espresso</span>
+                <div>
+                    <span class="item-price">₹350</span>
+                    <button class="add-btn" onclick="addToCart('Espresso',350)">Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Cappuccino</span>
+                <div>
+                    <span class="item-price">₹450</span>
+                    <button class="add-btn" onclick="addToCart('Cappuccino',450)">Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Latte</span>
+                <div>
+                    <span class="item-price">₹475</span>
+                    <button class="add-btn" onclick="addToCart('Latte',475)">Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Americano</span>
+                <div>
+                    <span class="item-price">₹375</span>
+                    <button class="add-btn" onclick="addToCart('Americano',375)">Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Mocha</span>
+                <div>
+                    <span class="item-price">₹525</span>
+                    <button class="add-btn" onclick="addToCart('Mocha',525)">Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Cold Brew</span>
+                <div>
+                    <span class="item-price">₹425</span>
+                    <button class="add-btn" onclick="addToCart('Cold Brew',425)">Add</button>
+                </div>
             </div>
         </div>
 
-        <div class="menu-item">
-            <span class="item-name">Cappuccino</span>
-            <div>
-                <span class="item-price">₹450</span>
-                <button class="add-btn" onclick="addToCart('Cappuccino',450)">Add</button>
+        <!-- CART -->
+        <div class="cart">
+            <h2>Your Order</h2>
+            <div id="cart-items">No items in cart</div>
+
+            <div id="cart-footer" style="display:none;">
+                <div class="cart-total">
+                    Total: <span id="total">₹0</span>
+                </div>
+                <button class="checkout-btn" onclick="checkout()">Place Order</button>
             </div>
         </div>
 
-        <div class="menu-item">
-            <span class="item-name">Latte</span>
-            <div>
-                <span class="item-price">₹475</span>
-                <button class="add-btn" onclick="addToCart('Latte',475)">Add</button>
-            </div>
-        </div>
+        <!-- INVOICE -->
+        <div id="invoice">
+            <h2>Brew & Beans ☕</h2>
+            <p>Date: <span id="billDate"></span></p>
+            <p>Order ID: <span id="orderId"></span></p>
 
-        <div class="menu-item">
-            <span class="item-name">Americano</span>
-            <div>
-                <span class="item-price">₹375</span>
-                <button class="add-btn" onclick="addToCart('Americano',375)">Add</button>
-            </div>
-        </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Qty</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="bill-items"></tbody>
+            </table>
 
-        <div class="menu-item">
-            <span class="item-name">Mocha</span>
-            <div>
-                <span class="item-price">₹525</span>
-                <button class="add-btn" onclick="addToCart('Mocha',525)">Add</button>
-            </div>
-        </div>
-
-        <div class="menu-item">
-            <span class="item-name">Cold Brew</span>
-            <div>
-                <span class="item-price">₹425</span>
-                <button class="add-btn" onclick="addToCart('Cold Brew',425)">Add</button>
-            </div>
+            <h3 id="bill-total"></h3>
+            <button class="print-btn" onclick="window.print()">Print Invoice</button>
         </div>
     </div>
-
-    <!-- CART -->
-    <div class="cart">
-        <h2>Your Order</h2>
-        <div id="cart-items">No items in cart</div>
-
-        <div id="cart-footer" style="display:none;">
-            <div class="cart-total">
-                Total: <span id="total">₹0</span>
-            </div>
-            <button class="checkout-btn" onclick="checkout()">Place Order</button>
-        </div>
-    </div>
-
-    <!-- INVOICE -->
-    <div id="invoice">
-        <h2>Brew & Beans ☕</h2>
-        <p>Date: <span id="billDate"></span></p>
-        <p>Order ID: <span id="orderId"></span></p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Qty</th>
-                    <th>Amount</th>
-                </tr>
-            </thead>
-            <tbody id="bill-items"></tbody>
-        </table>
-
-        <h3 id="bill-total"></h3>
-        <button class="print-btn" onclick="window.print()">Print Invoice</button>
-    </div>
-</div>
-<script src="order.js"></script>
+    <script src="order.js"></script>
 </body>
+
 </html>

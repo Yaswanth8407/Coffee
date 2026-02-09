@@ -1,145 +1,145 @@
  * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
 
-        body {
-            font-family: Arial, sans-serif;
-            padding: 2rem;
-            background: linear-gradient(135deg, #6B4423, #3E2723);
-        }
+ body {
+     font-family: Arial, sans-serif;
+     padding: 2rem;
+     background: linear-gradient(135deg, #6B4423, #3E2723);
+ }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: whitesmoke;
-            padding: 3rem;
-            border-radius: 15px;
-        }
+ .container {
+     max-width: 800px;
+     margin: auto;
+     background: whitesmoke;
+     padding: 3rem;
+     border-radius: 15px;
+ }
 
-        h1 {
-            text-align: center;
-            color: #3E2723;
-            margin-bottom: 2rem;
-        }
+ h1 {
+     text-align: center;
+     color: #3E2723;
+     margin-bottom: 2rem;
+ }
 
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 1.2rem;
-            border-bottom: 1px solid #eee;
-        }
+ .menu-item {
+     display: flex;
+     justify-content: space-between;
+     padding: 1.2rem;
+     border-bottom: 1px solid #eee;
+ }
 
-        .item-name {
-            font-weight: bold;
-            color: #6B4423;
-        }
+ .item-name {
+     font-weight: bold;
+     color: #6B4423;
+ }
 
-        .item-price {
-            color: #D4A574;
-            margin-right: 1rem;
-        }
+ .item-price {
+     color: #D4A574;
+     margin-right: 1rem;
+ }
 
-        .add-btn {
-            background: #6B4423;
-            color: white;
-            border: none;
-            padding: 0.5rem 1.4rem;
-            border-radius: 20px;
-            cursor: pointer;
-        }
+ .add-btn {
+     background: #6B4423;
+     color: white;
+     border: none;
+     padding: 0.5rem 1.4rem;
+     border-radius: 20px;
+     cursor: pointer;
+ }
 
-        /* CART */
-        .cart {
-            margin-top: 3rem;
-            border-top: 2px solid #D4A574;
-            padding-top: 2rem;
-        }
+ /* CART */
+ .cart {
+     margin-top: 3rem;
+     border-top: 2px solid #D4A574;
+     padding-top: 2rem;
+ }
 
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-        }
+ .cart-item {
+     display: flex;
+     justify-content: space-between;
+     padding: 0.8rem 0;
+     border-bottom: 1px solid #eee;
+ }
 
-        .remove-btn {
-            background: red;
-            color: white;
-            border: none;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            cursor: pointer;
-        }
+ .remove-btn {
+     background: red;
+     color: white;
+     border: none;
+     padding: 0.3rem 0.8rem;
+     border-radius: 15px;
+     cursor: pointer;
+ }
 
-        .cart-total {
-            font-size: 1.4rem;
-            margin-top: 1rem;
-            font-weight: bold;
-        }
+ .cart-total {
+     font-size: 1.4rem;
+     margin-top: 1rem;
+     font-weight: bold;
+ }
 
-        .checkout-btn {
-            width: 100%;
-            margin-top: 1.2rem;
-            padding: 1rem;
-            background: #D4A574;
-            border: none;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+ .checkout-btn {
+     width: 100%;
+     margin-top: 1.2rem;
+     padding: 1rem;
+     background: #D4A574;
+     border: none;
+     border-radius: 30px;
+     font-weight: bold;
+     cursor: pointer;
+ }
 
-        /* INVOICE */
-        #invoice {
-            display: none;
-            margin-top: 3rem;
-            border: 2px dashed #6B4423;
-            padding: 2rem;
-        }
+ /* INVOICE */
+ #invoice {
+     display: none;
+     margin-top: 3rem;
+     border: 2px dashed #6B4423;
+     padding: 2rem;
+ }
 
-        #invoice h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
+ #invoice h2 {
+     text-align: center;
+     margin-bottom: 1rem;
+ }
 
-        #invoice table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
+ #invoice table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-top: 1rem;
+ }
 
-        #invoice th,
-        #invoice td {
-            padding: 8px;
-            border-bottom: 1px solid #ccc;
-            text-align: center;
-        }
+ #invoice th,
+ #invoice td {
+     padding: 8px;
+     border-bottom: 1px solid #ccc;
+     text-align: center;
+ }
 
-        .print-btn {
-            margin-top: 1rem;
-            background: #3E2723;
-            color: white;
-            border: none;
-            padding: 0.6rem 1.4rem;
-            cursor: pointer;
-        }
+ .print-btn {
+     margin-top: 1rem;
+     background: #3E2723;
+     color: white;
+     border: none;
+     padding: 0.6rem 1.4rem;
+     cursor: pointer;
+ }
 
-        /* PRINT ONLY INVOICE */
-        @media print {
-            body * {
-                visibility: hidden;
-            }
+ /* PRINT ONLY INVOICE */
+ @media print {
+     body * {
+         visibility: hidden;
+     }
 
-            #invoice,
-            #invoice * {
-                visibility: visible;
-            }
+     #invoice,
+     #invoice * {
+         visibility: visible;
+     }
 
-            #invoice {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-            }
-        }
+     #invoice {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+     }
+ }
