@@ -58,4 +58,3 @@ CONCLUSION
 
 The Brew & Beans Coffee Ordering Website successfully demonstrates the development of a frontend-based online ordering system using HTML, CSS, and JavaScript.
 The project provides practical exposure to web development concepts and enhances understanding of user interface design and client-side scripting.
-Overall, this project highlights the importance of digital solutions in improving customer experience and business efficiency.
