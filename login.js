@@ -67,7 +67,7 @@ function signup() {
     users.push({ name: name, email: email, password: password });
 
     alert("Signup successful! Welcome to Brew & Bean, " + name + "!");
-    window.location.href = "order.html";
+    window.location.href = "main.html";
 }
 
 function login() {
@@ -79,7 +79,7 @@ function login() {
         return;
     }
 
-    // Check if user exists with matching credentials
+    // Checking if user exists with matching details
     let user = users.find(function (u) {
         return u.email === email && u.password === password;
     });
